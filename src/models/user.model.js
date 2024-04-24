@@ -2,6 +2,8 @@ import { Schema, model } from "mongoose";
 
 import bcrypt from "bcryptjs";
 
+import { ROLE_USER_ENUM } from "../utils/enums.js";
+
 const userSchema = new Schema(
   {
     name: {
@@ -20,6 +22,11 @@ const userSchema = new Schema(
     phone: {
       type: String,
       require: true,
+    },
+    role: {
+      type: String,
+      enum: ROLE_USER_ENUM,
+      default: "CLIENT",
     },
   },
   {

@@ -15,6 +15,7 @@ export const createUserService = async (body) => {
       message: "¡User created successfully!",
     };
   } catch (error) {
+    console.log(error);
     return {
       status: 500,
       message: "unknown error: userService[createUserService]",

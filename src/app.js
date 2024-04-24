@@ -6,6 +6,7 @@ import pkg from "../package.json" assert { type: "json" };
 
 // Routes
 import userRoutes from "./routes/user.routes.js";
+import authRoutes from "./routes/auth.routes.js";
 
 // Enviroment
 import * as dotenv from "dotenv";
@@ -22,6 +23,7 @@ app.use(morgan("dev"));
 app.use(cors());
 
 app.use("/users", userRoutes);
+app.use("/auth", authRoutes);
 
 app.get("/", (req, res) => {
   res.json({
